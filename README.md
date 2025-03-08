@@ -190,7 +190,7 @@ this way is totally fine, but if you change player position directly and used de
     player.position.x = 10
 ```
 
-# Make your vairables fixed :
+# Make your variables fixed :
 
 sometimes when we use deltaTime, if we assume our speed is 100 in 60 fps
 we want same speed in 15 fps. the problem is if multipy it with deltaTime.
