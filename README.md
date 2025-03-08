@@ -209,8 +209,8 @@ Result :
 ## 60 Frame-Normal:
 ![Description](https://github.com/GameDevRichtofen-G/How-to-use-deltaTime/blob/main/60_sec_fix.gif?raw=true))
 
-## 15 Frame-NotFixed
+### 15 Frame-NotFixed
 ![Description](https://github.com/GameDevRichtofen-G/How-to-use-deltaTime/blob/main/15_sec_no_fix.gif))
 
-## 15 Frame-Fixed
+### 15 Frame-Fixed
 ![Description](https://github.com/GameDevRichtofen-G/How-to-use-deltaTime/blob/main/15_sec_fix.gif))
