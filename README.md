@@ -172,3 +172,36 @@ while True: #Our update loop
 ```
 
 Great, now we completely understand why it is so important to use deltaTime. 
+But there are some things that you need to notice.These things can help you understand deltaTime better :
+
+# Never use deltaTime on variables that get direct value :
+Using a deltaTime on variables that will get direct value on a point of time is huge mistake,
+The thing is you should always use deltaTime on variables that are getting change on point of time.
+For example if you have character moving in x axis with speed 100 then we need to use deltaTime to make
+speed frame independent :
+```python
+    player.position.x  = player.position.x + (speed * deltaTime)
+```
+this way is totally fine, but if you change player position directly and used deltaTime, it would be a mistake:
+```python
+    player.position.x = 10 * deltaTime#Dont do this
+
+    #Except do this :
+    player.position.x = 10
+```
+
+# Make your vairables fixed :
+
+sometimes when we use deltaTime, if we assume our speed is 100 in 60 fps
+we want same speed in 15 fps. the problem is if multipy it with deltaTime.
+our speed in 60 fps will decrease to match same speed as 15 speed. sometimes,
+we want speed of 15 be same as speed of 60, or speed 150 fps be same as 60.
+in other word rather than decreasing speed of 60 fps we increase the speed
+of fps 15 to match the speed of fps 60:
+
+the formula to this is so simple :
+```python
+    player.position.x = player.position.x + (100 * (DeltaTime * (1/60)))
+```
+this ensures that speed(which is 100) stays the same in all other frame rates
+Result : 
