@@ -193,7 +193,7 @@ this way is totally fine, but if you change player position directly and used de
 # Make your variables fixed :
 
 sometimes when we use deltaTime, if we assume our speed is 100 in 60 fps
-we want same speed in 15 fps. the problem is if multipy it with deltaTime.
+we want same speed in 15 fps. the problem is if we multipy speed with deltaTime.
 our speed in 60 fps will decrease to match same speed as 15 speed. sometimes,
 we want speed of 15 be same as speed of 60, or speed 150 fps be same as 60.
 in other word rather than decreasing speed of 60 fps we increase the speed
