@@ -214,3 +214,21 @@ Result :
 
 ### 15 Frame-Fixed
 ![Description](https://github.com/GameDevRichtofen-G/How-to-use-deltaTime/blob/main/15_sec_fix.gif))
+
+As you can see in first image I have DR.Dirac from my game RADAR,
+he rotates and if you look at its legs you can see he moves it smoothly,
+thanks to deltaTime.
+
+but in second image since fps 15 he rotates and move faster compare to 60.
+so in third image we used the same formula we saw to calculate the same speed of 60 fps for 15fps
+#### Rotation code :
+```cpp
+{
+    FRotator Look_at_rotation = UKismetMathLibrary::FindLookAtRotation(GetActorLocation(), Target_location));
+	SetActorRotation(UKismetMathLibrary::RInterpTo(GetActorRotation(), FRotator(GetActorRotation().Pitch, Look_at_rotation.Yaw, Look_at_rotation.Roll),GetWorld()->GetDeltaSeconds(),1));
+	float DeltaYaw = FMath::Abs(GetActorRotation().Yaw - Previous_rotation.Yaw);
+	rotation_speed = DeltaYaw / (GetWorld()->GetDeltaSeconds() * (1 / 60));
+	Previous_rotation = GetActorRotation();
+
+}
+```
