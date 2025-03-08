@@ -170,3 +170,5 @@ while True: #Our update loop
     time.sleep(0.005)
    
 ```
+
+Great, now we completely understand why it is so important to use deltaTime. 
