@@ -216,7 +216,7 @@ Result :
 ![Description](https://github.com/GameDevRichtofen-G/How-to-use-deltaTime/blob/main/15_sec_fix.gif))
 
 As you can see in first image I have DR.Dirac from my game RADAR,
-he rotates and if you look at its legs you can see he moves it smoothly,
+he rotates and if you look at its legs you can see he move them smoothly,
 thanks to deltaTime.
 
 but in second image since fps 15 he rotates and move faster compare to 60.
