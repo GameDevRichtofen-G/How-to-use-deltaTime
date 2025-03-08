@@ -30,6 +30,8 @@ The most common usuage of deltaTime is when we want to make sure player speed is
 frame rate is, player speed would always be the same. Below is an example of frame dependent and frame independent scenario :
 
 # Frame dependent :
+![Description](https://.gif)
+
 in frame dependent we won't use deltaTime and update our carX by 15 block each frame.
 ```python
     self.x = (self.x + 15) % 10
