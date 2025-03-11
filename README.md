@@ -224,11 +224,11 @@ so in third image we used the same formula we saw to calculate the same speed of
 #### Rotation code :
 ```cpp
 {
-    FRotator Look_at_rotation = UKismetMathLibrary::FindLookAtRotation(GetActorLocation(), Target_location));
-	SetActorRotation(UKismetMathLibrary::RInterpTo(GetActorRotation(), FRotator(GetActorRotation().Pitch, Look_at_rotation.Yaw, Look_at_rotation.Roll),GetWorld()->GetDeltaSeconds(),1));
-	float DeltaYaw = FMath::Abs(GetActorRotation().Yaw - Previous_rotation.Yaw);
-	rotation_speed = DeltaYaw / (GetWorld()->GetDeltaSeconds() * (1 / 60));
-	Previous_rotation = GetActorRotation();
+    FRotator Look_at_rotation = UKismetMathLibrary::FindLookAtRotation(GetActorLocation(), Target_location));//->using FindLookatfunction in kistmet math libary to find the point of look as rotation
+	SetActorRotation(UKismetMathLibrary::RInterpTo(GetActorRotation(), FRotator(GetActorRotation().Pitch, Look_at_rotation.Yaw, Look_at_rotation.Roll),GetWorld()->GetDeltaSeconds(),1));/*->set AI rotation to look at point in smooth way using Rotation interpt to*/
+	float DeltaYaw = FMath::Abs(GetActorRotation().Yaw - Previous_rotation.Yaw);//-> calculate delta yaw using this formula : |AIyaw - AIpreviousYaw|
+	rotation_speed = DeltaYaw / (GetWorld()->GetDeltaSeconds() * (1 / 60));//->calculate the speed using this formula : DeltaYaw / DeltaTime but since it doesn't fit other frame rates we divide delta Yaw with this (DeltaTime * (1 / 60))
+	Previous_rotation = GetActorRotation();#->set previous rotation to ai current rotation for next frame
 
 }
 ```
