@@ -5,11 +5,25 @@
 #include <Kismet/KismetMathLibrary.h>
 
 
+AAI_Character::AAI_Character()
+{
+
+	PrimaryActorTick.bCanEverTick = true;
+	//Init....
+}
+
+
+void AAI_Character::BeginPlay()
+{
+	Super::BeginPlay();
+	//in the start of a game....
+}
+
 void AAI_Character::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	Calculate_rotation_speed(DeltaTime);
-
+	//whatever after this...
 
 }
 
@@ -23,6 +37,13 @@ void AAI_Character::Calculate_rotation_speed(float deltaTime)
 	Previous_rotation = GetActorRotation();
 
 }
+
+
+
+
+
+
+
 
 
 
