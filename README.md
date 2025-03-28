@@ -1,5 +1,5 @@
 # What is ``deltaTime``
-Delta time is one of the useful variables in game development. This variable can sometimes be refer as many different names like 
+Delta time is one of the most useful variables in game development. This variable can sometimes be refer as many different names like 
 ElpasedTime, TimeStep, FrameTime and etc. In general, deltaTime displays the amount time that has passed from X1frame to X2frame.
 
 ## Example(Python) : 
